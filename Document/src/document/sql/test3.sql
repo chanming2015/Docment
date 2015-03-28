@@ -2,6 +2,7 @@
 CREATE USER zs IDENTIFIED BY "123";
 CREATE USER ww IDENTIFIED BY "123";
 CREATE USER tq IDENTIFIED BY "123";
+DROP USER tq CASCADE;
 -------------------------------------------------------
 --授予的是系统权限--
 --授权可以创建会话
@@ -24,7 +25,7 @@ REVOKE SELECT ON zs.student FROM ww;
 -------------------------------------------------------
 
 --修改用户的默认表空间和限额
-ALTER USER zs
+ALTER USER tq
 DEFAULT TABLESPACE myspace01
 QUOTA UNLIMITED ON myspace01;
 -------------------------------------------------------
@@ -57,8 +58,8 @@ REVOKE CONNECT,RESOURCE FROM yy;
 
 
 
-GRANT myrole01 TO yy;
-REVOKE myrole01 FROM yy;
+GRANT myrole01 TO tq;
+REVOKE myrole01 FROM tq;
 
 GRANT CREATE ANY TABLE TO yy;
 

@@ -2,20 +2,20 @@
 
 --创建表空间（只有一个数据文件的表空间）
 CREATE TABLESPACE myspace01 
-DATAFILE 'D:\myspace01.dbf' SIZE 1M REUSE;
+DATAFILE 'D:\oracletablespace\myspace01.dbf' SIZE 1M REUSE;
 
 --修改表空间数据文件为自增，每次增加1M，最大3M
-ALTER DATABASE DATAFILE 'D:\myspace01.dbf'
+ALTER DATABASE DATAFILE 'D:\oracletablespace\myspace01.dbf'
 AUTOEXTEND ON NEXT 1M
 MAXSIZE 3M;
 
 --修改数据文件，设置为无限大小
-ALTER DATABASE DATAFILE 'D:\myspace01.dbf'
+ALTER DATABASE DATAFILE 'D:\oracletablespace\myspace01.dbf'
 AUTOEXTEND ON MAXSIZE UNLIMITED;
 
 --这是一个可以自增长的表空间，而且大小不限（常用）
-CREATE TABLESPACE myspace02
-DATAFILE 'd:\myspace02.dbf' SIZE 2m 
+CREATE TABLESPACE myspace01
+DATAFILE 'D:\oracletablespace\myspace01.dbf' SIZE 2m 
 AUTOEXTEND ON NEXT 2m 
 MAXSIZE UNLIMITED; --50m;
 
