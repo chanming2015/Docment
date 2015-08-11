@@ -1,0 +1,15 @@
+一、定时关机
+1.创建关机脚本(shell)
+#!/bin/bash
+sudo shutdown -h +1
+exit 0
+2.创建定时执行任务(cron)
+55 17   * * 5   root    sh /usr/local/bin/poweroff.sh
+二、定时备份数据
+1.创建备份脚本(shell)
+#!/bin/bash
+DATE=$(date +%Y-%m-%d)
+mysqldump -uroot -pWc8D9c1JGLTDx c2 > /aliyun/SQL/backup_$DATE.sql
+exit 0
+2.创建定时执行任务
+0 02   1 */1 *   root    sh /usr/local/bin/backup.sh
