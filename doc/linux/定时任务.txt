@@ -1,7 +1,7 @@
 一、定时关机
 1.创建关机脚本(shell)
 #!/bin/bash
-sudo shutdown -h +1
+sudo shutdown -h now
 exit 0
 2.创建定时执行任务(cron)
 55 17   * * 5   root    sh /usr/local/bin/poweroff.sh
